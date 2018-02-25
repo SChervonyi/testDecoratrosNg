@@ -42,14 +42,14 @@ function Validate(target: any, propertyName: string, descriptor: TypedPropertyDe
 }
 
 class Person {
-  greeting: string;
+  private greeter: string;
 
-  constructor(message: string) {
-    this.greeting = message;
+  constructor(greeter: string) {
+    this.greeter = greeter;
   }
 
   @Validate
   greet(@Required name: any) {
-    return "Hello " + name + ", " + this.greeting;
+    return "Hello " + name + ", I am " + this.greeter;
   }
 }
