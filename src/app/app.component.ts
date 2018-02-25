@@ -10,8 +10,8 @@ export class AppComponent implements OnInit {
   title = 'app';
 
   ngOnInit(): void {
-    let g = new Greeter("Rick");
-    console.log(g.greet("Morti"));
+    let g = new Person("Rick");
+    console.log(g.greet(undefined));
   }
 }
 
@@ -41,7 +41,7 @@ function Validate(target: any, propertyName: string, descriptor: TypedPropertyDe
   }
 }
 
-class Greeter {
+class Person {
   greeting: string;
 
   constructor(message: string) {
