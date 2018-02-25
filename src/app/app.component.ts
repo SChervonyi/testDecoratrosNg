@@ -13,35 +13,35 @@ export class AppComponent implements OnInit {
     // let person = new Person("Rick");
     // console.log(person.greet(undefined));
 
-    // let greeter = new Greeter("Summer");
-    // console.log(greeter.greet());
+    let greeter = new Greeter("Summer");
+    console.log(greeter.greet());
   }
 }
 
 // ----------------------------------------------------------------------------------------------------------------------------------
 
-// const formatMetadataKey = Symbol("format");
+const formatMetadataKey = Symbol("format");
 
-// function Format(formatString: string) {
-//     return Reflect.metadata(formatMetadataKey, formatString);
-// }
+function Format(formatString: string) {
+    return Reflect.metadata(formatMetadataKey, formatString);
+}
 
-// function getFormat(target: any, propertyKey: string) {
-//     return Reflect.getMetadata(formatMetadataKey, target, propertyKey);
-// }
+function getFormat(target: any, propertyKey: string) {
+    return Reflect.getMetadata(formatMetadataKey, target, propertyKey);
+}
 
-// class Greeter {
-//   @Format("Hello, %s") greeting: string;
+class Greeter {
+  @Format("Hello, %s") greeting: string;
 
-//   constructor(message: string) {
-//       this.greeting = message;
-//   }
+  constructor(message: string) {
+      this.greeting = message;
+  }
 
-//   greet() {
-//       let formatString = getFormat(this, "greeting");
-//       return formatString.replace("%s", this.greeting);
-//   }
-// }
+  greet() {
+      let formatString = getFormat(this, "greeting");
+      return formatString.replace("%s", this.greeting);
+  }
+}
 
 // ----------------------------------------------------------------------------------------------------------------------------------
 
